@@ -1,6 +1,6 @@
 import React from "react";
 import { testimonialCarouselData } from "../utilities/data";
-import { Swiper, SwiperSlide } from "swiper/react";4
+import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 
 // Import Swiper styles

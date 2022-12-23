@@ -1,6 +1,6 @@
 export default function Sidebar() {
   return (
-    <>
+    <> 
       <aside className="w-[30vw]   -z-20" >
         <div className="overflow-y-auto pt-10 px-3 bg-gray-100 rounded border-r-4 border-black">
           {/* make sidebar in tailwind with profile */}
