@@ -115,12 +115,12 @@ export default function Home() {
                   </button>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href={"/login"}
                     className="block  text-black  bg-white md:border-0 px-3 py-2 rounded-xl  md:hover:text-blue-500 hover:bg-gray-700 hover:text-blue-500 md:hover:bg-transparent text-xl border-gray-700"
                   >
                     Start Now
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -137,7 +137,7 @@ export default function Home() {
           >
             <div className="grid py-5 px-4 mx-auto max-w-screen-xl  text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
               <div>
-                <Link href={"/Vendor"} className="block p-3 rounded-lg  hover:bg-gray-700">
+                <Link href={"/pricing"} className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Vendor - Pro Version</div>
                   <span className="text-sm font-light  text-gray-400">
                     Connect with third-party tools that youre already using.
@@ -145,7 +145,7 @@ export default function Home() {
                 </Link>
               </div>
               <div>
-                <Link href={"/Customer"} className="block p-3 rounded-lg  hover:bg-gray-700">
+                <Link href={"/pricing"} className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Customer - Base Version</div>
                   <span className="text-sm font-light  text-gray-400">
                     Connect with third-party tools that youre already using.
@@ -153,7 +153,7 @@ export default function Home() {
                 </Link>
               </div>
               <div>
-                <Link href={"/Customer"} className="block p-3 rounded-lg  hover:bg-gray-700">
+                <Link href={"/pricing"} className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Customer - Pro Version</div>
                   <span className="text-sm font-light  text-gray-400">
                     Connect with third-party tools that youre already using.
