@@ -48,7 +48,7 @@ const ReviewCarousel = (props: Props) => {
       <>
         <Swiper
           spaceBetween={20}
-          slidesPerView="auto"
+          slidesPerView={3}
           centeredSlides={true}
           pagination={{
             clickable: true,
@@ -63,13 +63,7 @@ const ReviewCarousel = (props: Props) => {
           breakpoints={{
             // when window width is <= 499px
 
-            // when window width is <= 999px
-            320: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 3,
-            },
+
           }}
           className="xl:h-full gap-2 "
         >
