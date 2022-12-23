@@ -33,6 +33,9 @@ type Props = {
 
 const LocateCustomer = (props: Props) => {
 
+
+
+  
   const date = new Date();
   const showTime = date.getHours() 
       + ':' + date.getMinutes() 
@@ -77,7 +80,18 @@ const LocateCustomer = (props: Props) => {
 function sendData() {
   setToggle(!toggle);
   console.log(dataSet);
-  
+  fetch('http://7c41-35-231-198-135.ngrok.io/result', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataSet),
+  }).then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+  }).catch((error) => {
+    console.error('Error:', error);
+  });
 }
 
   return (
@@ -88,7 +102,7 @@ function sendData() {
 
     <div className="  col-span-2 flex flex-col gap-6">
 
-    <h1 className='text-3xl font-semibold`'>Enter your details</h1>
+    <h1 className='text-3xl font-semibold'>Enter your details</h1>
 
       <div>
         <h2 className='text-xl font-semibold pb-3'>Enter Pincode</h2>
