@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Aboutuscard from "../components/AboutUsCard";
 import ContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
+
 import Navbar from "../components/Navbar";
 
 export default function Aboutus() {
@@ -63,7 +63,7 @@ export default function Aboutus() {
         <ContactForm />
       </div>
       <div>
-        <Footer />
+
       </div>
     </div>
   );
