@@ -2872,6 +2872,11 @@ quick-lru@^5.1.1:
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+react-best-chatbot@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-best-chatbot/-/react-best-chatbot-2.0.1.tgz#8e4acad0ab636843452f8671862f1f24e0d8cf76"
+  integrity sha512-oegzHM+hflDWPrNhug8Rf18FWYGvEiNmvllEwMl4PSgiZKyqeFVixstCgg0jgY9QH5XxrlnBgOWgCG2X6HuG/w==
+
 react-countup@^6.4.0:
   version "6.4.0"
   resolved "https://registry.npmjs.org/react-countup/-/react-countup-6.4.0.tgz"
