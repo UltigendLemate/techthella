@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
+@font-face {
+  font-family: averta;
+  src: url('/fonts/AvertaDemoPE-Regular.ttf');
+}
+
+*{
+font-family: averta;
+}

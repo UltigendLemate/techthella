@@ -10,7 +10,12 @@ module.exports = {
         'primary-green': '#00676C',
         'primary-purple': '#D9C6F4',
       },
+      fontFamily: {
+        'public-sans': ['Public Sans', 'sans-serif'],
+        'averta': ['averta', 'sans-serif'],
+        
     },
   },
   plugins: [],
+}
 }

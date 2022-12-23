@@ -130,7 +130,7 @@ export default function Home() {
             id="mega-menu-full-cta-dropdown"
             className={
               menuPricing
-                ? "mt-1 shadow-sm border-y bg-gray-800 absolute top-20 w-full border-gray-600"
+                ? "mt-1 shadow-sm  bg-gray-900 absolute top-[104px] w-full "
                 : "hidden"
             }
             onMouseLeave={() => setMenuPricing(false)}
@@ -167,7 +167,7 @@ export default function Home() {
             id="mega-menu-full-cta-dropdown"
             className={
               menuServices
-                ? "mt-1 items-center  shadow-sm border-y absolute top-20 w-full bg-gray-800 border-gray-600"
+                ? "mt-1 items-center  shadow-sm  absolute bg-gray-900 w-full top-[104px]"
                 : "hidden"
             }
             onMouseLeave={() => setMenuServices(false)}
