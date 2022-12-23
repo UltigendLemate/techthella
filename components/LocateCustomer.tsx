@@ -51,6 +51,34 @@ const LocateCustomer = (props: Props) => {
   const [selected, setSelected] = useState(pincode[0])
   const [todayDay, setTodayDay] = useState(Days[0])
 
+  // toggle to button
+  const [toggle, setToggle] = useState(true)
+
+
+  const [dataSet, setDataSet] = useState({
+    pin: selected.pinCode,
+    day: todayDay.id,
+    time: parseInt(date.getHours() +""+ date.getMinutes()),
+  })
+  useEffect(() => {
+    let dateN = new Date();
+ 
+      
+    
+    setDataSet({
+      pin: selected.pinCode,
+      day: todayDay.id ,
+      time: parseInt(dateN.getHours() +""+ dateN.getMinutes())
+    })
+    console.log(dataSet)
+    
+  }, [toggle]);
+
+function sendData() {
+  setToggle(!toggle);
+  console.log(dataSet);
+  
+}
 
   return (
     <>
@@ -171,17 +199,23 @@ const LocateCustomer = (props: Props) => {
       </Listbox>
       </div>
 
-      <div>
+      <div className='border-b-4 border-gray-300 pb-10'>
       <h2 className='text-xl font-semibold pb-3'>Current time : {time} </h2>
+      <button className='text-xl font-bold bg-green-500 px-4 py-2 rounded-2xl' onClick={sendData}>Submit Data</button>
+      </div>
+      <div className=''>
+      <h2 className='text-2xl font-semibold font-public-sans'>The <span className='text-green-600 text-3xl'>probability</span> to get sales at this point of time at this location is 10%</h2>
 
       </div>
 
-      <hr />
+      
+
+      
     </div>
 
     <div className="col-span-3">
 
-    <div ><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Ambica%20VIhar,%20New%20Delhi+(Ambika%20Vihar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe></div>
+    <div ><iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=Ambica%20VIhar,%20New%20Delhi+(Ambika%20Vihar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe></div>
 
     </div>
 
