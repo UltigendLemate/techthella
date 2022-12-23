@@ -3,8 +3,8 @@ import Chatbot from 'react-best-chatbot';
 
  const theme = {
   primaryColor: "#FFFFFF",
-  secondaryColor: "rgb(34, 197, 94)",
-  textPrimaryColor: "rgb(34, 197, 94)",
+  secondaryColor: "#22C55E",
+  textPrimaryColor: "#22C55E",
   textSecondaryColor: "#FFFFFF",
   containerStyle: {
     width: 310,
