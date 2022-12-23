@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Listbox, Transition } from '@headlessui/react'
+import Review from './../components/Review';
 
 const nearMe = [{
 'Name': 'Ramu',
@@ -226,15 +227,15 @@ function sendData() {
       </button>
       {(show==='show') ? 
       <div className="justify-center w-3/5 grid grid-cols-1">
-        <div className="bg-[#fab3a2]  my-3 rounded-lg text-center text-white ">
+        <div className="bg-white shadow-lg my-3 rounded-lg text-center text-black border-[#fc6441] border-2">
           <h1 className="font-semibold">Ravi</h1>
           <p >Fruit Seller</p>
         </div>
-        <div className="bg-[#fab3a2]  my-3 rounded-lg text-center text-white ">
+        <div className="bg-white shadow-lg my-3 rounded-lg text-center text-black border-[#fc6441] border-2">
           <h1  className="font-semibold">Prakash</h1>
           <p>Vegetable Seller</p>
         </div>
-        <div className="bg-[#fab3a2]  my-3 rounded-lg text-center text-white ">
+        <div className="bg-white shadow-lg my-3 rounded-lg text-center text-black border-[#fc6441] border-2">
           <h1  className="font-semibold">Raju</h1>
           <p>Gol Gappe seller</p>
         </div>
@@ -272,10 +273,15 @@ const Customer = () => {
         <CustomerSidebar component={setcomponent} /> 
         
        <div className="flex flex-col mx-auto">
-        {(component==='vendors near me') ? <div className="text-[#fc6441] text-4xl text-center mt-20 font-extrabold">Vendors near you </div> : null}
+        {(component==='vendors near me') ? <div className="text-[#fc6441] text-4xl text-center mt-20 w-[500px] font-extrabold">Vendors near you </div> : null}
+        
+        {
+  (component === 'review')  ? <Review/> : null
+}
         <div className="w-4/5 mx-auto grid grid-cols-2 justify-center">
 
-    {(component === 'vendors near me') ? <LocateCustomer/> : null }
+    {(component === 'vendors near me') ? <LocateCustomer/> : null } 
+   
      {/* leaderboard codee  */}
         {(component === 'leaderboard') ? (<div className="flex flex-col w-[70vw]">
     <div className="flex justify-center items-center py-10 text-5xl font-bold">Leaderboard</div>
@@ -370,6 +376,8 @@ const Customer = () => {
     </div>
   </div>
 </div>) : null }
+
+
 {/* leaderboard code endss here */}
         {/* <SwiperSlide
       className="h-[200px] mt-[48px] ml-[48px] bg-purple-50 rounded-3xl px-6 py-8  flex flex-col gap-8"
