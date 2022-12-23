@@ -140,7 +140,7 @@ export default function Home() {
                 <a href="#" className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Vendor - Pro Version</div>
                   <span className="text-sm font-light  text-gray-400">
-                    Connect with third-party tools that youre already using.
+                    Starting at just INR 5*
                   </span>
                 </a>
               </div>
@@ -148,7 +148,7 @@ export default function Home() {
                 <a href="#" className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Customer - Base Version</div>
                   <span className="text-sm font-light  text-gray-400">
-                    Connect with third-party tools that youre already using.
+                    No need of money
                   </span>
                 </a>
               </div>
@@ -156,7 +156,7 @@ export default function Home() {
                 <a href="#" className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Customer - Pro Version</div>
                   <span className="text-sm font-light  text-gray-400">
-                    Connect with third-party tools that youre already using.
+                    Get the best customer experience
                   </span>
                 </a>
               </div>
@@ -175,17 +175,17 @@ export default function Home() {
             <div className="flex items-center py-5 px-4 mx-auto max-w-screen-xl z-40 text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
               <div className="z-10">
                 <a href="#" className="block p-3 rounded-lg  hover:bg-gray-700">
-                  <div className="font-semibold">Segmentation</div>
+                  <div className="font-semibold">Consumer</div>
                   <span className="text-sm font-light  text-gray-400">
-                    Connect with third-party tools that youre already using.
+                    Find your favourite vendor again!
                   </span>
                 </a>
               </div>
               <div>
                 <a href="#" className="block p-3 rounded-lg  hover:bg-gray-700">
-                  <div className="font-semibold">Marketing CRM</div>
+                  <div className="font-semibold">Vendor</div>
                   <span className="text-sm font-light  text-gray-400">
-                    Connect with third-party tools that youre already using.
+                    Join the party now!
                   </span>
                 </a>
               </div>
