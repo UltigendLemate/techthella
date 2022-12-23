@@ -21,3 +21,38 @@ export const sectionData=[
       title : "Users"
     }, 
   ]
+
+
+  export const testimonialCarouselData = [
+    {
+      name: "John Doe",
+      designation: "CEO, ABC Company",
+      image: "john",
+      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc elit aliquam mauris, eget aliquam nisl nisl eu nunc. Sed euismod, nunc ut aliquam tincidunt, nunc elit aliquam mauris, eget aliquam nisl nisl eu nunc."
+    },
+    {
+      name: "John Doe",
+      designation: "Vendor",
+      image: "john",
+      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc elit aliquam mauris, eget aliquam nisl nisl eu nunc. Sed euismod, nunc ut aliquam tincidunt, nunc elit aliquam mauris, eget aliquam nisl nisl eu nunc."
+    },
+    {
+      name: "John Doe",
+      designation: "Consumer",
+      image: "john",
+      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc elit aliquam mauris, eget aliquam nisl nisl eu nunc. Sed euismod, nunc ut aliquam tincidunt, nunc elit aliquam mauris, eget aliquam nisl nisl eu nunc."
+    },
+    {
+      name: "John Doe",
+      designation: "Consumer",
+      image: "john",
+      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc elit aliquam mauris, eget aliquam nisl nisl eu nunc. Sed euismod, nunc ut aliquam tincidunt, nunc elit aliquam mauris, eget aliquam nisl nisl eu nunc."
+    },
+    {
+      name: "John Doe",
+      designation: "Vendor",
+      image: "john",
+      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc elit aliquam mauris, eget aliquam nisl nisl eu nunc. Sed euismod, nunc ut aliquam tincidunt, nunc elit aliquam mauris, eget aliquam nisl nisl eu nunc."
+    },
+    
+  ]

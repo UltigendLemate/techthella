@@ -5,6 +5,8 @@ import AboutDataTemplate from "../components/AboutDataCard";
 import { sectionData } from "../utilities/data";
 import LoginCard from '../components/LoginCards';
 import Navbar from '../components/Navbar';
+import ReviewCarousel from "../components/ReviewCarousel";
+
 
 const inter = Inter({ subsets: ['latin'] })
 const renderAboutData = sectionData.map((data, index) => (
@@ -61,8 +63,8 @@ export default function Home() {
       {/* stats sectione ends   */}
 
 
-
-      <section className='px-32 py-20'>
+{/* login  for vendor and consumer starts */}
+      <section className='px-32 pt-20'>
       <div className='h-[70vh] rounded-3xl bg-black text-white px-48 flex flex-col items-center text-center'>
         <p className='text-6xl font-bold my-14 leading-tight '>Its your time to make the move with <span className='text-green-500'>tech
         <span className='text-white'>THELLA</span>
@@ -75,6 +77,28 @@ export default function Home() {
         <LoginCard name='Consumer' imgName='consumer' text='bahut hua online ka prahaar, ab phone hi badhaega apki raftaar. Abhi sign up karei'/>
         </div>  
       </section>
+{/* login  for vendor and consumer ends */}
+
+
+        {/* Student Feedback Carousel Starts */}
+        <div className="flex flex-col gap-10 w-4/5 py-4 mx-auto relative">
+          <div className="flex flex-col gap-2">
+            <div className="xl:text-5xl text-4xl font-semibold">
+              <h1>
+                Hear it from our customers!
+              </h1>
+            </div>
+            <p className="text-[#6D737A] text-lg font-public-sans">
+              Various versions have evolved over the years, sometimes by
+              accident,
+            </p>
+          </div>
+ 
+          <ReviewCarousel />
+  
+        </div>
+        {/* Student Feedback Carousel Ends */}
+
     </>
   )
 }
