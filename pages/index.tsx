@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import AboutDataTemplate from "../components/AboutDataCard";
 import { sectionData } from "../utilities/data";
+import LoginCard from '../components/LoginCards';
 
 const inter = Inter({ subsets: ['latin'] })
 const renderAboutData = sectionData.map((data, index) => (
@@ -52,9 +53,24 @@ export default function Home() {
 
 
       {/* stats section starts */}
-      <div className="bg-primary-purple grid grid-cols-2 md:grid-cols-4 px-10 w-full">
+      <section className="bg-primary-purple grid grid-cols-2 md:grid-cols-4 px-10 w-full">
           {renderAboutData}
+        </section>
+      {/* stats sectione ends   */}
+
+
+
+      <section className='px-32 py-20'>
+      <div className='h-[70vh] rounded-3xl bg-black text-white px-48 flex flex-col items-center text-center'>
+        <p className='text-6xl font-bold my-14 leading-tight '>Its your time to make the move with <span className='text-primary-green'>TechThella</span></p> 
         </div>
+
+      {/* this is the div surrounding vendor and customer */}
+      <div className='grid grid-cols-2 gap-9 px-20 relative -top-64'>
+        <LoginCard name="Vendor" imgName='vendor'/>
+        <LoginCard name='Consumer' imgName='consumer'/>
+        </div>  
+      </section>
     </>
   )
 }
