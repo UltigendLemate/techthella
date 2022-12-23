@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-
+import UpdateCart from "../components/UpdateCart";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Leaderboard from "../components/Leaderboard";
 import LocateCustomer from "../components/LocateCustomer";
+// import UpdateCart from "../components/UpdateCart";
 
 
 export default function Home() {
@@ -22,7 +23,8 @@ export default function Home() {
         <div className="flex z-0 relative">
         <Sidebar />
         {/* <Leaderboard /> */}
-        <LocateCustomer />
+        {/* <LocateCustomer /> */}
+        <UpdateCart/>
         </div>
       </div>
       {/* main hero section starts */}
