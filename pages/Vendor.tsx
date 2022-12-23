@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import Leaderboard from "../components/Leaderboard";
+import LocateCustomer from "../components/LocateCustomer";
 
 
 export default function Home() {
@@ -14,11 +16,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="relative">
+      <div className="relative overflow-x-hidden">
         <Navbar />
 
-        <div className="flex w-screen z-0">
+        <div className="flex z-0 relative">
         <Sidebar />
+        {/* <Leaderboard /> */}
+        <LocateCustomer />
         </div>
       </div>
       {/* main hero section starts */}
