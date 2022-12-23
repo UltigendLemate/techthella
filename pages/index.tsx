@@ -7,6 +7,10 @@ import LoginCard from '../components/LoginCards';
 import Navbar from '../components/Navbar';
 import ReviewCarousel from "../components/ReviewCarousel";
 
+import mongoose, { mongo } from "mongoose";
+import { GetServerSideProps } from 'next';
+import Reviews from "../models/Reviews";
+import Revi from "../models/Revi";
 
 const inter = Inter({ subsets: ['latin'] })
 const renderAboutData = sectionData.map((data, index) => (
@@ -18,7 +22,7 @@ const renderAboutData = sectionData.map((data, index) => (
     title={data.title}
   />
 ));
-export default function Home() {
+export default function Home(Rev,Revs) {
   return (
     <>
       <Head>
@@ -101,4 +105,20 @@ export default function Home() {
 
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  if(!mongoose.connections[0].readyState){
+  
+
+  await mongoose.connect(process.env.MONGO_URL)
+  console.log("Connected to database successfully")
+  }
+
+  let Rev = await Reviews.find();
+  let Revs = await Revi.find();
+  return { 
+    props: { Rev: JSON.parse(JSON.stringify(Rev)), Revs: JSON.parse(JSON.stringify(Revs))},
+  }
+
 }
