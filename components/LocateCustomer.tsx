@@ -80,7 +80,7 @@ const LocateCustomer = (props: Props) => {
 function sendData() {
   setToggle(!toggle);
   console.log(dataSet);
-  fetch('http://7c41-35-231-198-135.ngrok.io/result', {
+  fetch('http://10fe-34-125-172-217.ngrok.io/result', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
