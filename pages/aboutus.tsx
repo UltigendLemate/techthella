@@ -16,21 +16,23 @@ export default function Aboutus() {
       </Head>
       <Navbar />
       {/* heading */}
-      <div className="flex flex-col space-y-10 pt-4 justify-center align-middle w-4/5 mx-auto">
-        <h1 className="text-5xl font-black text-center">
+      <div className="flex flex-col  justify-center align-middle w-4/5 mx-auto">
+        
+        <div className="flex text-left">
+          {/* left */}
+          <div className="flex flex-col justify-center align-middle space-y-8">
+          <h1 className="text-6xl font-black ">
           ABOUT
           <span className="text-green-500"> US</span>{" "}
         </h1>
-        <div className="flex flex-shrink flex-grow-0">
-          {/* left */}
-          <div className="flex flex-col justify-center align-middle space-y-8">
-            <p className="text-center text-xl">
+
+            <p className="text-xl">
               {" "}
               Based out of Delhi Technological University, techTHELLA is aimed
               to solve the problems of the street vendors by becoming a platform
               providing the ailment to all their daily problems.
             </p>
-            <p className="text-center text-xl">
+            <p className="text-xl">
               {" "}
               Ranging from converting their hardwork into smartwork to providing
               the feel of being working in an organised way are some of the
@@ -40,7 +42,7 @@ export default function Aboutus() {
             </p>
           </div>
           {/* right */}
-          <div className="ml-auto min-w-32">
+          <div className="min-w-[40vw]">
             <Image
               src={"/assets/about.gif"}
               width={500}
@@ -51,7 +53,7 @@ export default function Aboutus() {
           </div>
         </div>
 
-        <div className=" grid grid-cols-3 space-x-4 ">
+        <div className=" grid grid-cols-3 gap-12 ">
           <Aboutuscard />
           <Aboutuscard />
           <Aboutuscard />

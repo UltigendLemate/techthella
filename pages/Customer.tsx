@@ -1,5 +1,6 @@
 import React, {useState, useEffect, Fragment, useLayoutEffect} from 'react'
-import CustomerHome from "../components/CustomerNavbar";
+// import CustomerHome from "../components/CustomerNavbar";
+import Navbar from "../components/Navbar";
 import CustomerSidebar from "../components/CustomerSidebar";
 import Head from "next/head";
 import CustomerNear from './../components/CustomerNear';
@@ -264,7 +265,7 @@ const Customer = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="relative">
-        <CustomerHome/>
+        <Navbar/>
         
         <div className="flex flex-row">
         <div className="flex w-screen z-0">

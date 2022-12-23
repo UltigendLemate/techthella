@@ -15,7 +15,7 @@ export default function Sidebar(props : Props) {
             <div className="flex-shrink-0">
               <img
                 className="h-[120px] w-[120px] rounded-full"
-                src="http://medicine.exeter.ac.uk/images/profiles/John_Dennis.jpg"
+                src="/assets/man.png"
                 alt="John"
               />
             </div>

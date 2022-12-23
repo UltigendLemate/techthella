@@ -1,7 +1,7 @@
 export default function Aboutuscard() {
   return (
     <>
-      <div className="text-center">
+      <div className="text-center bg-purple-100 rounded-3xl p-7">
         <img
           width="210"
           height="210"
