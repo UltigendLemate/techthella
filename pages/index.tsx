@@ -22,7 +22,11 @@ const renderAboutData = sectionData.map((data, index) => (
     title={data.title}
   />
 ));
-export default function Home(Rev,Revs) {
+
+
+
+
+export default function Home(Rev) {
   return (
     <>
       <Head>
@@ -116,9 +120,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   let Rev = await Reviews.find();
-  let Revs = await Revi.find();
+  // let Revs = await Revi.find();
   return { 
-    props: { Rev: JSON.parse(JSON.stringify(Rev)), Revs: JSON.parse(JSON.stringify(Revs))},
+    props: { Rev: JSON.parse(JSON.stringify(Rev))},
   }
 
 }
