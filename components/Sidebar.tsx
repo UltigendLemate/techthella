@@ -1,20 +1,20 @@
 export default function Sidebar() {
   return (
     <>
-      <aside className="w-[33vw] h-[85vh] absolute z-10" aria-label="Sidebar">
-        <div className="overflow-y-auto py-4 px-3 bg-gray-100 rounded border-r-4 border-black">
+      <aside className="w-[30vw]   -z-20" >
+        <div className="overflow-y-auto pt-10 px-3 bg-gray-100 rounded border-r-4 border-black">
           {/* make sidebar in tailwind with profile */}
           <div className="flex flex-col items-center justify-between space-y-3">
             <div className="flex-shrink-0">
               <img
-                className="h-[150px] w-[150px] rounded-full"
+                className="h-[120px] w-[120px] rounded-full"
                 src="http://medicine.exeter.ac.uk/images/profiles/John_Dennis.jpg"
                 alt="John"
               />
             </div>
             {/* basic info + qr */}
             <div className="flex flex-col space-y-1 justify-between items-center">
-              <h2 className="text-3xl">John Doe</h2>
+              <h2 className="text-3xl font-semibold">Ravikant Ganjha</h2>
               <p className="text-xl">Vendor ID : #54984646849</p>
               <img
                 className="h-[170px] w-[170px] pt-5 "

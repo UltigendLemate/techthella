@@ -172,8 +172,8 @@ export default function Home() {
             }
             onMouseLeave={() => setMenuServices(false)}
           >
-            <div className="flex items-center py-5 px-4 mx-auto max-w-screen-xl text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
-              <div>
+            <div className="flex items-center py-5 px-4 mx-auto max-w-screen-xl z-40 text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
+              <div className="z-10">
                 <a href="#" className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Segmentation</div>
                   <span className="text-sm font-light  text-gray-400">
