@@ -5,7 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'primary-green': '#00676C',
+        'primary-purple': '#D9C6F4',
+      },
+    },
   },
   plugins: [],
 }

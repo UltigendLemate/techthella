@@ -13,14 +13,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="flex">
-        <div>
-        <h3 className='text-5xl'>Empowering your long-lived trust with technology and love.</h3>
-        <h5 className='text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio porro aliquid facere necessitatibus suscipit sunt molestiae, neque quia! Aperiam, mollitia?</h5>
+      <section className="flex justify-center items-center px-28  gap-7">
+        <div className='flex flex-col justify-items-center items-center gap-9 max-w-[45vw]'>
+        <h3 className='text-5xl font-semibold'>Empowering your long-lived <span className='text-primary-green'>trust</span> with technology and love.</h3>
+        <h5 className='text-xl'>Restoring the connection between vendors and consumers in a split second. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, eius? et consectetur adipisicing elit. Ea, possimus.</h5>
         </div>
 
-        <div className='w-60 h-60 bg-red-500'>
-          {/* <img src={"/assets/"} alt="" /> */}
+        <div className='w-[60vw]'>
+          <Image 
+          src={"/assets/herosec.gif"}
+          width={500}
+          height={500} 
+          className="w-full"
+          alt="" />
 
         </div>
 
