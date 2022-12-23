@@ -1,6 +1,6 @@
 // import usestate
 import { useState } from "react";
-
+import Link from "next/link";
 export default function Home() {
   // make menu hover toggle
 
@@ -12,11 +12,11 @@ export default function Home() {
       <div>
         <nav className="relative border-gray-600 h-{15vh} z-40 bg-gray-900 ">
           <div className="flex flex-wrap h-[15vh]  justify-between items-center self-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
-            <a href="" className="flex items-center">
+            <Link href={"/"} className="flex items-center">
               <span className="self-center text-4xl font-semibold whitespace-nowrap text-white">
                 <span className="text-green-500">tech</span>THELLA
               </span>
-            </a>
+            </Link>
             <button
               id="mega-menu-full-cta-button"
               className="inline-flex items-center p-2 ml-1 text-sm rounded-lg md:hidden focus:outline-none focus:ring-2  text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
@@ -42,22 +42,22 @@ export default function Home() {
             >
               <ul className="flex flex-col mt-4 text-sm font-medium md:flex-row md:space-x-8 md:mt-0">
                 <li className="flex  items-center">
-                  <a
-                    href="#"
+                  <Link
+                    href={"/"}
                     className="block py-2 pr-4 pl-3 border-b   md:border-0 md:p-0 text-gray-400 md:hover:text-blue-500 hover:bg-gray-700 hover:text-blue-500 md:hover:bg-transparent border-gray-700 text-xl"
                     aria-current="page"
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex items-center">
-                  <a
-                    href="#"
+                  <Link
+                    href={"/aboutus"}
                     className="block py-2 pr-4 pl-3 border-b   md:border-0 md:p-0 text-gray-400 md:hover:text-blue-500 hover:bg-gray-700 hover:text-blue-500 md:hover:bg-transparent border-gray-700 text-xl"
                     aria-current="page"
                   >
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex">
                   <button
@@ -115,12 +115,12 @@ export default function Home() {
                   </button>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href={"/login"}
                     className="block  text-black  bg-white md:border-0 px-3 py-2 rounded-xl  md:hover:text-blue-500 hover:bg-gray-700 hover:text-blue-500 md:hover:bg-transparent text-xl border-gray-700"
                   >
                     Start Now
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -137,28 +137,28 @@ export default function Home() {
           >
             <div className="grid py-5 px-4 mx-auto max-w-screen-xl  text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
               <div>
-                <a href="#" className="block p-3 rounded-lg  hover:bg-gray-700">
+                <Link href={"/pricing"} className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Vendor - Pro Version</div>
                   <span className="text-sm font-light  text-gray-400">
                     Connect with third-party tools that youre already using.
                   </span>
-                </a>
+                </Link>
               </div>
               <div>
-                <a href="#" className="block p-3 rounded-lg  hover:bg-gray-700">
+                <Link href={"/pricing"} className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Customer - Base Version</div>
                   <span className="text-sm font-light  text-gray-400">
                     Connect with third-party tools that youre already using.
                   </span>
-                </a>
+                </Link>
               </div>
               <div>
-                <a href="#" className="block p-3 rounded-lg  hover:bg-gray-700">
+                <Link href={"/pricing"} className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Customer - Pro Version</div>
                   <span className="text-sm font-light  text-gray-400">
                     Connect with third-party tools that youre already using.
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

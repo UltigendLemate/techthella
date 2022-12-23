@@ -1,13 +1,18 @@
 import Head from "next/head";
 import Image from "next/image";
-
+import UpdateCart from "../components/UpdateCart";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Leaderboard from "../components/Leaderboard";
 import LocateCustomer from "../components/LocateCustomer";
+// import UpdateCart from "../components/UpdateCart";
+import { useState } from 'react';
 
 
 export default function Home() {
+  const [component, setcomponent] = useState('locate customer')
+  console.log(component);
+
   return (
     <>
       <Head>
@@ -20,9 +25,10 @@ export default function Home() {
         <Navbar />
 
         <div className="flex z-0 relative">
-        <Sidebar />
-        {/* <Leaderboard /> */}
-        <LocateCustomer />
+        <Sidebar component={setcomponent}/>
+        { (component === 'leaderboard') ? <Leaderboard /> : null}
+        {(component === 'locate customer' || component==='') ? <LocateCustomer /> : null}
+        {(component === 'update' || component==='') ? <UpdateCart /> : null}
         </div>
       </div>
       {/* main hero section starts */}
