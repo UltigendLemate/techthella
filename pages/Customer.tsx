@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useState, useEffect, Fragment, useLayoutEffect} from 'react'
 import CustomerHome from "../components/CustomerNavbar";
 import CustomerSidebar from "../components/CustomerSidebar";
 import Head from "next/head";
 import CustomerNear from './../components/CustomerNear';
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { Listbox, Transition } from '@headlessui/react'
 
 const nearMe = [{
 'Name': 'Ramu',
@@ -20,7 +21,240 @@ const nearMe = [{
   'Name': 'Akash Jindal',
   'Distance': '2.1km',
 }]
+
+const pincode = [
+  { id: 1, pinCode: 110080, unavailable: false },
+  { id: 2, pinCode: 110081, unavailable: false },
+  { id: 3, pinCode: 110082, unavailable: false },
+  { id: 4, pinCode: 110083, unavailable: true },
+  { id: 5, pinCode: 110084, unavailable: false },
+  { id: 5, pinCode: 110085, unavailable: false },
+]
+const Days = [
+  { id: 1, day: "Monday", unavailable: false },
+  { id: 2, day: "Tuesday", unavailable: false },
+  { id: 3, day: "Wednesday", unavailable: false },
+  { id: 4, day: "Thursday", unavailable: true },
+  { id: 5, day: "Friday", unavailable: false },
+  { id: 5, day: "Saturday", unavailable: false },
+  { id: 6, day: "Sunday", unavailable: false },
+]
+
+type Props = {
+
+
+};
+
+
+
+
+const LocateCustomer = (props: Props) => {
+
+  const date = new Date();
+  const showTime = date.getHours() 
+      + ':' + date.getMinutes() 
+      + ":" + date.getSeconds();
+  const [time, setTime] = useState(showTime)
+ 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(showTime)
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [showTime]);
+
+  
+
+  const [selected, setSelected] = useState(pincode[0])
+  const [todayDay, setTodayDay] = useState(Days[0])
+  const [show, setshow] = useState('')
+
+  // toggle to button
+  const [toggle, setToggle] = useState(true)
+
+
+  const [dataSet, setDataSet] = useState({
+    pin: selected.pinCode,
+    day: todayDay.id,
+    time: parseInt(date.getHours() +""+ date.getMinutes()),
+  })
+  useEffect(() => {
+    let dateN = new Date();
+ 
+      
+    
+    setDataSet({
+      pin: selected.pinCode,
+      day: todayDay.id ,
+      time: parseInt(dateN.getHours() +""+ dateN.getMinutes())
+    })
+    console.log(dataSet)
+    
+  }, [toggle]);
+
+function sendData() {
+  setToggle(!toggle);
+  console.log(dataSet);
+  
+}
+
+  return (
+    <>
+
+    <div className="flex flex-col w-[70vw] ">
+    <div className="grid grid-cols-5 px-10 gap-5 py-10">
+
+    <div className="  col-span-2 flex flex-col gap-6">
+
+    <h1 className='text-3xl font-semibold`'>Search here</h1>
+
+      <div>
+        <h2 className='text-xl font-semibold pb-3'>Enter product</h2>
+      <Listbox value={selected} onChange={setSelected}>
+        <div className="relative mt-1 z-40">
+          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+            <span className="block truncate">{selected.pinCode}</span>
+            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+              <ChevronUpDownIcon
+                className="h-5 w-5 text-gray-400"
+                aria-hidden="true"
+              />
+            </span>
+          </Listbox.Button>
+          <Transition
+            as={Fragment}
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              {pincode.map((person, personIdx) => (
+                <Listbox.Option
+                  key={personIdx}
+                  className={({ active }) =>
+                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                      active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
+                    }`
+                  }
+                  value={person}
+                >
+                  {({ selected }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? 'font-medium' : 'font-normal'
+                        }`}
+                      >
+                        {person.pinCode}
+                      </span>
+                      {selected ? (
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                      ) : null}
+                    </>
+                  )}
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          </Transition>
+        </div>
+      </Listbox>
+      </div>
+
+
+      <div>
+        <h2 className='text-xl font-semibold pb-3'>Enter Location</h2>
+      <Listbox value={todayDay} onChange={setTodayDay}>
+        <div className="relative mt-1 z-30">
+          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+            <span className="block truncate">{todayDay.day}</span>
+            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+              <ChevronUpDownIcon
+                className="h-5 w-5 text-gray-400"
+                aria-hidden="true"
+              />
+            </span>
+          </Listbox.Button>
+          <Transition
+            as={Fragment}
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Listbox.Options className="absolute mt-1  w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              {Days.map((person, personIdx) => (
+                <Listbox.Option
+                  key={personIdx}
+                  className={({ active }) =>
+                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                      active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
+                    }`
+                  }
+                  value={person}
+                >
+                  {({ selected }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          todayDay ? 'font-medium' : 'font-normal'
+                        }`}
+                      >
+                        {person.day}
+                      </span>
+                      {selected ? (
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                      ) : null}
+                    </>
+                  )}
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          </Transition>
+        </div>
+      </Listbox>
+      </div>
+
+      
+      <button 
+      onClick={()=> {setshow('show')}}
+      className="bg-[#fc6441] w-2/5 rounded-xl p-2 text-white font-semibold">
+        Search
+      </button>
+      {(show==='show') ? 
+      <div className="justify-center w-3/5 grid grid-cols-1">
+        <div className="bg-[#fab3a2]  my-3 rounded-lg text-center text-white ">
+          <h1 className="font-semibold">Ravi</h1>
+          <p >Fruit Seller</p>
+        </div>
+        <div className="bg-[#fab3a2]  my-3 rounded-lg text-center text-white ">
+          <h1  className="font-semibold">Prakash</h1>
+          <p>Vegetable Seller</p>
+        </div>
+        <div className="bg-[#fab3a2]  my-3 rounded-lg text-center text-white ">
+          <h1  className="font-semibold">Raju</h1>
+          <p>Gol Gappe seller</p>
+        </div>
+      </div> : null
+}
+    </div>
+    <div className="col-span-3">
+    <div ><iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=Ambica%20VIhar,%20New%20Delhi+(Ambika%20Vihar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe></div>
+    </div>
+    </div>
+    </div> 
+    </>
+  );
+};
+
+
+
+
 const Customer = () => {
+  
+  const [component, setcomponent] = useState('');
   return (
     <>
       <Head>
@@ -34,12 +268,109 @@ const Customer = () => {
         
         <div className="flex flex-row">
         <div className="flex w-screen z-0">
-        <CustomerSidebar /> 
+        <CustomerSidebar component={setcomponent} /> 
         
        <div className="flex flex-col mx-auto">
-        <div className="text-[#fc6441] text-4xl text-center mt-20 font-extrabold">Vendors near you </div>
+        {(component==='vendors near me') ? <div className="text-[#fc6441] text-4xl text-center mt-20 font-extrabold">Vendors near you </div> : null}
         <div className="w-4/5 mx-auto grid grid-cols-2 justify-center">
-        <SwiperSlide
+
+    {(component === 'vendors near me') ? <LocateCustomer/> : null }
+     {/* leaderboard codee  */}
+        {(component === 'leaderboard') ? (<div className="flex flex-col w-[70vw]">
+    <div className="flex justify-center items-center py-10 text-5xl font-bold">Leaderboard</div>
+  <div className="overflow-x-auto  lg:-mx-8">
+    <div className="py-2 inline-block w-full sm:px-6 lg:px-8">
+      <div className="overflow-hidden grid justify-center items-center text-center">
+        <table className="w-[60vw] px-10">
+          <thead className="border-b">
+            <tr>
+              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
+                Rank
+              </th>
+              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
+                Full Name
+              </th>
+              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
+                Rating
+              </th>
+            </tr>
+          </thead>
+          <tbody className="text-xl font-semibold">
+            <tr className="border-b ">
+              <td className="px-5 m-4 font-bold rounded-full py-4 whitespace-nowrap text-2xl text-purple-600 bg-yellow-500 inline-block ">1</td>
+              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                Harish 
+              </td>
+
+              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                @mdo
+              </td>
+            </tr>
+            <tr className="bg-white border-b">
+              <td className="px-5 m-4 font-bold rounded-full py-4 whitespace-nowrap text-2xl text-purple-600 bg-yellow-500 inline-block ">2</td>
+              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                Om Bihari
+              </td>
+
+              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                @fat
+              </td>
+            </tr>
+            <tr className="bg-white border-b">
+              <td className="px-5 m-4 font-bold rounded-full py-4 whitespace-nowrap text-2xl text-purple-600 bg-yellow-500 inline-block ">3</td>
+              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                Kamlesh Rawat
+              </td>
+
+              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                @twitter
+              </td>
+
+              <hr />
+            </tr>
+
+            
+          </tbody>
+        </table>
+      </div>
+      <div className="overflow-hidden border-t-4 border-black grid justify-center items-center text-center">
+        <table className="w-[60vw] px-10">
+          <thead className="border-b">
+            <tr>
+              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
+                Rank
+              </th>
+              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
+                Name
+              </th>
+              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
+                Rating
+              </th>
+            </tr>
+          </thead>
+          <tbody className="text-xl font-semibold">
+            <tr className="border-b ">
+              <td className="px-5 m-4 font-bold rounded-full py-4 whitespace-nowrap text-2xl text-purple-600 bg-yellow-500 inline-block ">1</td>
+              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                Harish 
+              </td>
+
+              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                @mdo
+              </td>
+            </tr>
+
+
+
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>) : null }
+{/* leaderboard code endss here */}
+        {/* <SwiperSlide
       className="h-[200px] mt-[48px] ml-[48px] bg-purple-50 rounded-3xl px-6 py-8  flex flex-col gap-8"
     >
       <div className="flex flex-col items-center justify-between rounded-3xl w-full gap-4">
@@ -84,7 +415,7 @@ const Customer = () => {
         </div>
       </div>
       <div className="text-[#363A3D]">More something</div>
-    </SwiperSlide>
+    </SwiperSlide> */}
     </div>
     
 </div>

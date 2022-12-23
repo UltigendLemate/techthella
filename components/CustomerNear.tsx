@@ -10,7 +10,7 @@ const CustomerNear = (props) => {
         </div>
         <div className="flex">
         <h1>Name: </h1>
-        <div>{props.distance}</div>
+        <div>ok ok </div>
         </div>
       </div>
     </div>

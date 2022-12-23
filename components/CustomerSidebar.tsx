@@ -3,7 +3,8 @@ import {RiSecurePaymentFill} from 'react-icons/ri'
 import {MdRateReview, MdLeaderboard} from 'react-icons/md'
 import {GiImperialCrown, GiBuyCard} from 'react-icons/gi'
 
-export default function Sidebar() {
+export default function Sidebar(props) {
+  const component = props.component;
     return (
       <> 
         <aside className="w-[30vw]  -z-20" >
@@ -25,19 +26,27 @@ export default function Sidebar() {
               <div className="flex flex-col space-y-1 justify-between text-gray-900 items-center">
                 <h2 className="text-3xl text-white font-extrabold">Mr. Oberoi</h2>
                 <p className="text-xl text-white">Customer ID : 696969</p>
-                <button className="rounded-lg p-2 flex w-full my-4 bg-white hover:bg-[#fab3a2]">
+                <button 
+                onClick={()=>{component('review')}}
+                className="rounded-lg p-2 flex w-full my-4 bg-white hover:bg-[#fab3a2]">
                   <MdRateReview className="text-[#fc6441]" fontSize={25}/>
                   <div>Review Your Vendors</div>
                 </button>
-                <button className="flex w-full rounded-lg p-2 my-4 bg-white hover:bg-[#fab3a2]">
+                <button 
+                onClick={()=>{component('notification')}}
+                className="flex w-full rounded-lg p-2 my-4 bg-white hover:bg-[#fab3a2]">
                   <IoIosNotifications className="text-[#fc6441]" fontSize={25}/>
                   <div>Notification</div>
                 </button>
-                <button className="flex w-full rounded-lg p-2 my-4 bg-white hover:bg-[#fab3a2]">
+                <button 
+                onClick={()=>{component('leaderboard')}}
+                className="flex w-full rounded-lg p-2 my-4 bg-white hover:bg-[#fab3a2]">
                   <MdLeaderboard className="text-[#fc6441]" fontSize={25}/>
                   <div>Leaderboard</div>
                 </button>
-                <button className="flex w-full rounded-lg p-2 my-4 bg-white hover:bg-[#fab3a2]">
+                <button 
+                onClick={()=>{component('vendors near me')}}
+                className="flex w-full rounded-lg p-2 my-4 bg-white hover:bg-[#fab3a2]">
                   <GiBuyCard className="text-[#fc6441]" fontSize={25}/>
                   <div>Vendors near me</div>
                 </button>
