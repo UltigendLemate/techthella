@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 
 export default function Home() {
-  const [component, setcomponent] = useState('')
+  const [component, setcomponent] = useState('locate customer')
   console.log(component);
 
   return (
@@ -28,6 +28,7 @@ export default function Home() {
         <Sidebar component={setcomponent}/>
         { (component === 'leaderboard') ? <Leaderboard /> : null}
         {(component === 'locate customer' || component==='') ? <LocateCustomer /> : null}
+        {(component === 'update' || component==='') ? <UpdateCart /> : null}
         </div>
       </div>
       {/* main hero section starts */}
