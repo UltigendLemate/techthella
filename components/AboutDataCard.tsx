@@ -22,7 +22,7 @@ const AboutDataCard = (props: Props) => {
           suffix="+"
         />
         {/* <h3 className="font-semibold text-3xl">{props.number}</h3> */}
-        <h5 className="text-xl text-white">{props.title}</h5>
+        <h5 className="text-xl text-white font-public-sans">{props.title}</h5>
       </div>
     </div>
   );

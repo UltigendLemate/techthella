@@ -32,10 +32,10 @@ export default function Home() {
       {/* main hero section starts */}
       <section className="flex justify-center h-[85vh] items-center px-28  gap-7">
         <div className='flex flex-col justify-center gap-7 max-w-[45vw]'>
-        <h5 className='text-2xl text-purple-400 font-bold -my-4 text-left'>START TO SUCCESS</h5>
+        <h5 className='text-2xl text-purple-400 font-bold -my-4 font-public-sans'>START TO SUCCESS</h5>
 
         <h3 className='text-5xl font-semibold'>Empowering your long-lived <span className='text-green-500 '>trust</span> with <span className="text-green-500">technology</span> and <span className="text-green-500">love</span></h3>
-        <h5 className='text-xl'>Restoring the connection between vendors and consumers in a split second. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, eius? et consectetur adipisicing elit. Ea, possimus.</h5>
+        <h5 className='text-xl font-public-sans'>Restoring the connection between vendors and consumers in a split second. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, eius? et consectetur adipisicing elit. Ea, possimus.</h5>
         </div>
 
         <div className='w-[60vw]'>
