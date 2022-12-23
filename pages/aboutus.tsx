@@ -42,7 +42,7 @@ export default function Aboutus() {
           {/* right */}
           <div className="ml-auto min-w-32">
             <Image
-              src={"/assets/herosec.gif"}
+              src={"/assets/about.gif"}
               width={500}
               height={500}
               className="w-full"
