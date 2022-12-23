@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <div>
-        <nav className="relative border-gray-600 h-{15vh} bg-gray-900 ">
+        <nav className="relative border-gray-600 h-{15vh} z-40 bg-gray-900 ">
           <div className="flex flex-wrap h-[15vh]  justify-between items-center self-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
             <a href="" className="flex items-center">
               <span className="self-center text-4xl font-semibold whitespace-nowrap text-white">
