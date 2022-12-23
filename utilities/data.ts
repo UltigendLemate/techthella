@@ -1,24 +1,24 @@
 export const sectionData=[
     {picImg: "scholarship",
     start : 0,
-    number : 300,
-    title : "Instructors"
+    number : 100,
+    title : "Vendors"
     },
     {picImg: "people",
-    start : 17000,
-    number : 20000,
-    title : "Students"
+    start : 170,
+    number : 2000,
+    title : "Consumers"
     },
     {picImg: "vidcam",
-    start : 8500,
-    number : 10000,
-    title : "Videos"
+    start : 85,
+    number : 3000,
+    title : "Transactions"
     },
     {
       picImg: "audience",
       start : 500,
-      number : 1000,
-      title : "Users"
+      number : 2500,
+      title : "Reviews"
     }, 
   ]
 
