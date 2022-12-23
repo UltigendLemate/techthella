@@ -6,9 +6,13 @@ import Sidebar from "../components/Sidebar";
 import Leaderboard from "../components/Leaderboard";
 import LocateCustomer from "../components/LocateCustomer";
 // import UpdateCart from "../components/UpdateCart";
+import { useState } from 'react';
 
 
 export default function Home() {
+  const [component, setcomponent] = useState('')
+  console.log(component);
+
   return (
     <>
       <Head>
@@ -21,10 +25,9 @@ export default function Home() {
         <Navbar />
 
         <div className="flex z-0 relative">
-        <Sidebar />
-        {/* <Leaderboard /> */}
-        {/* <LocateCustomer /> */}
-        <UpdateCart/>
+        <Sidebar component={setcomponent}/>
+        { (component === 'leaderboard') ? <Leaderboard /> : null}
+        {(component === 'locate customer' || component==='') ? <LocateCustomer /> : null}
         </div>
       </div>
       {/* main hero section starts */}
