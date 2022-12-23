@@ -10,20 +10,18 @@ export default function Home() {
   return (
     <>
       <div>
-        <nav className="bg-white relative  border-gray-200 dark:border-gray-600 h-{15vh} dark:bg-gray-900">
+        <nav className="relative border-gray-600 h-{15vh} bg-gray-900 ">
           <div className="flex flex-wrap h-[15vh]  justify-between items-center self-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
-            <a href="https://flowbite.com" className="flex items-center">
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <a href="" className="flex items-center">
+              <span className="self-center text-4xl font-semibold whitespace-nowrap dark:text-white">
                 <span className="text-green-500">tech</span>THELLA
               </span>
             </a>
             <button
               id="mega-menu-full-cta-button"
-              data-collapse-toggle="mega-menu-full-cta"
-              type="button"
+             
               className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="mega-menu-full-cta"
-              aria-expanded="false"
+       
             >
               <span className="sr-only">Open main menu</span>
               <svg
@@ -45,30 +43,30 @@ export default function Home() {
               className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
             >
               <ul className="flex flex-col mt-4 text-sm font-medium md:flex-row md:space-x-8 md:mt-0">
-                <li>
+                <li className="flex  items-center">
                   <a
                     href="#"
-                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700 text-xl"
                     aria-current="page"
                   >
                     Home
                   </a>
                 </li>
-                <li>
+                <li className="flex items-center" >
                   <a
                     href="#"
-                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700 text-xl"
                     aria-current="page"
                   >
                     About
                   </a>
                 </li>
-                <li>
+                <li className="flex">
                   <button
                     id="mega-menu-full-cta-dropdown-button"
-                    data-collapse-toggle="mega-menu-full-cta-dropdown"
+         
                     data-dropdown-placement="bottom"
-                    className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700 text-xl"
                     onMouseEnter={() => {
                       if (!menuServices) {
                         setMenuPricing(true);
@@ -90,12 +88,12 @@ export default function Home() {
                     </svg>
                   </button>
                 </li>
-                <li>
+                <li className="flex">
                   <button
                     id="mega-menu-full-cta-dropdown-button"
                     data-collapse-toggle="mega-menu-full-cta-dropdown"
                     data-dropdown-placement="bottom"
-                    className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700 text-xl"
                     onMouseEnter={() => {
                       if (!menuPricing) {
                         setMenuServices(true);
@@ -120,7 +118,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="block  text-black  bg-white md:border-0 px-3 py-2 rounded-xl  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="block  text-black  bg-white md:border-0 px-3 py-2 rounded-xl  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent text-xl dark:border-gray-700"
                   >
                     Start Now
                   </a>
