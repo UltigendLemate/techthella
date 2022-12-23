@@ -18,11 +18,11 @@ const AboutDataCard = (props: Props) => {
           end={props.number}
           duration={2}
           enableScrollSpy={true}
-          className="font-semibold text-4xl text-primary-green"
+          className="font-semibold text-4xl text-green-500"
           suffix="+"
         />
         {/* <h3 className="font-semibold text-3xl">{props.number}</h3> */}
-        <h5 className="text-xl text-[#52565C]">{props.title}</h5>
+        <h5 className="text-xl text-white">{props.title}</h5>
       </div>
     </div>
   );

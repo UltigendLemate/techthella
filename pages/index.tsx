@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import AboutDataTemplate from "../components/AboutDataCard";
 import { sectionData } from "../utilities/data";
 import LoginCard from '../components/LoginCards';
+import Navbar from '../components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] })
 const renderAboutData = sectionData.map((data, index) => (
@@ -24,7 +25,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className='h-[15vh] bg-red-300'></nav>
+      
+      <Navbar />
 
 
       {/* main hero section starts */}
@@ -32,7 +34,7 @@ export default function Home() {
         <div className='flex flex-col justify-center gap-7 max-w-[45vw]'>
         <h5 className='text-2xl text-purple-400 font-bold -my-4 text-left'>START TO SUCCESS</h5>
 
-        <h3 className='text-5xl font-semibold'>Empowering your long-lived <span className='text-primary-green '>trust</span> with <span className="text-primary-green">technology</span> and <span className="text-primary-green">love</span></h3>
+        <h3 className='text-5xl font-semibold'>Empowering your long-lived <span className='text-green-500 '>trust</span> with <span className="text-green-500">technology</span> and <span className="text-green-500">love</span></h3>
         <h5 className='text-xl'>Restoring the connection between vendors and consumers in a split second. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, eius? et consectetur adipisicing elit. Ea, possimus.</h5>
         </div>
 
@@ -53,7 +55,7 @@ export default function Home() {
 
 
       {/* stats section starts */}
-      <section className="bg-primary-purple grid grid-cols-2 md:grid-cols-4 px-10 w-full">
+      <section className="bg-gray-900 grid grid-cols-2 md:grid-cols-4 px-10 w-full">
           {renderAboutData}
         </section>
       {/* stats sectione ends   */}
@@ -62,13 +64,15 @@ export default function Home() {
 
       <section className='px-32 py-20'>
       <div className='h-[70vh] rounded-3xl bg-black text-white px-48 flex flex-col items-center text-center'>
-        <p className='text-6xl font-bold my-14 leading-tight '>Its your time to make the move with <span className='text-primary-green'>TechThella</span></p> 
+        <p className='text-6xl font-bold my-14 leading-tight '>Its your time to make the move with <span className='text-green-500'>tech
+        <span className='text-white'>THELLA</span>
+        </span></p> 
         </div>
 
       {/* this is the div surrounding vendor and customer */}
       <div className='grid grid-cols-2 gap-9 px-20 relative -top-64'>
-        <LoginCard name="Vendor" imgName='vendor'/>
-        <LoginCard name='Consumer' imgName='consumer'/>
+        <LoginCard name="Vendor" imgName='vendor' text='Ordering stuff is easy without making you pocket squeezy. Sign up to know how'/>
+        <LoginCard name='Consumer' imgName='consumer' text='bahut hua online ka prahaar, ab phone hi badhaega apki raftaar. Abhi sign up karei'/>
         </div>  
       </section>
     </>
