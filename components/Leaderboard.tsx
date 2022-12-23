@@ -38,7 +38,7 @@ const Leaderboard = (props: Props) => {
               </td>
 
               <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @mdo
+                4.9/5
               </td>
             </tr>
             <tr className="bg-white border-b">
@@ -48,7 +48,7 @@ const Leaderboard = (props: Props) => {
               </td>
 
               <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @fat
+                4.7/5
               </td>
             </tr>
             <tr className="bg-white border-b">
@@ -58,7 +58,7 @@ const Leaderboard = (props: Props) => {
               </td>
 
               <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @twitter
+                4.6/5
               </td>
 
               <hr />
@@ -70,28 +70,16 @@ const Leaderboard = (props: Props) => {
       </div>
       <div className="overflow-hidden border-t-4 border-black grid justify-center items-center text-center">
         <table className="w-[60vw] px-10">
-          <thead className="border-b">
-            <tr>
-              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
-                Rank
-              </th>
-              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
-                Name
-              </th>
-              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
-                Rating
-              </th>
-            </tr>
-          </thead>
+      
           <tbody className="text-xl font-semibold">
             <tr className="border-b ">
-              <td className="px-5 m-4 font-bold rounded-full py-4 whitespace-nowrap text-2xl text-purple-600 bg-yellow-500 inline-block ">1</td>
+              <td className="px-5 m-4 font-bold rounded-full py-4 whitespace-nowrap text-2xl text-purple-600 bg-yellow-500 inline-block ">23</td>
               <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Harish 
+                Ravikant Ganjha
               </td>
 
               <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @mdo
+                3.5/5
               </td>
             </tr>
 
