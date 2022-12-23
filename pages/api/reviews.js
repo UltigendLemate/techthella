@@ -1,6 +1,8 @@
 import Reviews from "../../models/Reviews";
 import connectDb from "../../middleware/mongoose";
 
+
+
 const handler = async (req, res) => {
   if (req.method == "POST") {
     for (let i = 0; i < req.body.length; i++) {
@@ -13,6 +15,27 @@ const handler = async (req, res) => {
 
 
       await b.save();
+
+      var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify([
+    {
+        number: req.body[0].vendornumber
+    }
+  ]);
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://localhost:8100/by", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
       res.status(200).json({ success: "success" });
     }
   } else {
