@@ -1,6 +1,8 @@
 import React from 'react'
-
-const CustomerNear = (props) => {
+type Props = {
+  name: string;
+}
+const CustomerNear = (props:Props) => {
   return (
     <div className="grid grid-cols-2">
       <div className="rounded-sm">

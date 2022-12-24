@@ -1,8 +1,8 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
 
-type Props={}
-const Review = (props:Props) => {
+type Props = {}
+const Review = (props: Props) => {
 
   const [email, setemail] = useState("");
   const [number, setnumber] = useState("");
@@ -11,7 +11,7 @@ const Review = (props:Props) => {
 
 
 
-  async function handleSubmit (e)  {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const data = [
@@ -60,28 +60,33 @@ const Review = (props:Props) => {
   };
   return (
     <div className=''>
-    <div className="text-[#fc6441] fflex flex-col justify-center items-centeront-bold text-4xl mt-20">
-          Hey there, Whats your review for Ravi Kumar ?
-        </div>
-      <form className="border-2 border-[#fc6441] shadow-lg p-2 flex flex-col w-[600px]">
-        
-        <input className='text-xl font-semibold pb-3 p-4 border-2 border-black' placeholder="Vendor Number" value={number} onChange={(e) => {
-    setnumber(e.target.value);
-  }}/>
-        <input className='text-xl font-semibold pb-3 p-4' placeholder="Your Review" value={msg} onChange={(e) => {
-    setmsg(e.target.value);
-  }}/>
-        <input className='text-xl font-semibold pb-3 p-4' placeholder="Your Review" value={email} onChange={(e) => {
-    setemail(e.target.value);
-  }}/>
-        <button onClick={(e) => handleSubmit(e)} 
-      className="bg-[#fc6441] w-2/5 rounded-xl p-2 text-white font-semibold">
-        Submit
-      </button>
 
-        
+      <form className=" shadow-lg p-2 flex flex-col gap-5 w-[800px] mt-20">
+        <h2 className='text-4xl text-[#fc6441] font-bold'>
+          Hey there, What is your review for Ravi Kumar ?
+
+        </h2>
+
+        <input className='text-xl font-semibold pb-3 p-4 shadow-sm shadow-gray-400' placeholder="Vendor Number" value={number} onChange={(e) => {
+          setnumber(e.target.value);
+        }} />
+
+        <input className='text-xl font-semibold pb-3 p-4 shadow-sm shadow-gray-400' placeholder="Your Email" value={email} onChange={(e) => {
+          setemail(e.target.value);
+        }} />
+
+        <input className='text-xl font-semibold pb-3 p-4 shadow-sm shadow-gray-400' placeholder="Your Review" value={msg} onChange={(e) => {
+          setmsg(e.target.value);
+        }} />
+
+        <button onClick={(e) => handleSubmit(e)}
+          className="bg-[#fc6441] w-2/5 rounded-xl p-2 text-white font-semibold">
+          Submit
+        </button>
+
+
       </form>
-      </div>
+    </div>
   )
 }
 
