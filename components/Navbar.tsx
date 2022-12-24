@@ -145,7 +145,7 @@ export default function Home() {
                 </Link>
               </div>
               <div>
-                <Link href={"/pricing"} className="block p-3 rounded-lg  hover:bg-gray-700">
+                <Link href={"/form"} className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Customer - Base Version</div>
                   <span className="text-sm font-light  text-gray-400">
                     Connect with third-party tools that youre already using.
@@ -153,7 +153,7 @@ export default function Home() {
                 </Link>
               </div>
               <div>
-                <Link href={"/pricing"} className="block p-3 rounded-lg  hover:bg-gray-700">
+                <Link href={"/form"} className="block p-3 rounded-lg  hover:bg-gray-700">
                   <div className="font-semibold">Customer - Pro Version</div>
                   <span className="text-sm font-light  text-gray-400">
                     Connect with third-party tools that youre already using.
