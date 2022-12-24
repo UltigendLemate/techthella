@@ -257,7 +257,7 @@ function sendData() {
 
 const Customer = () => {
   
-  const [component, setcomponent] = useState('review');
+  const [component, setcomponent] = useState('');
   return (
     <>
       <Head>
@@ -277,7 +277,7 @@ const Customer = () => {
         {(component==='vendors near me') ? <div className="text-[#fc6441] text-4xl text-center mt-20 w-[500px] font-extrabold">Vendors near you </div> : null}
         
         {
-  (component === 'review')  ? <Review/> : null
+  (component === 'review' || component==='')  ? <Review /> : null
 }
         <div className=" mx-auto grid grid-cols-2 justify-center">
 
