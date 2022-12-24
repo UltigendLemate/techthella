@@ -3,12 +3,14 @@ import {RiSecurePaymentFill} from 'react-icons/ri'
 import {MdRateReview, MdLeaderboard} from 'react-icons/md'
 import {GiImperialCrown, GiBuyCard} from 'react-icons/gi'
 
-export default function Sidebar(props) {
+type Props = {
+  component : Function}
+export default function Sidebar(props:Props) {
   const component = props.component;
     return (
       <> 
-        <aside className="w-[30vw]  -z-20" >
-          <div className="overflow-y-auto h-screen pt-10 px-3 bg-[#231f20] border-r-4 border-black">
+        <aside className="min-w-[30vw]  -z-20" >
+          <div className="overflow-y-auto h-screen pt-10 px-3 bg-gray-900 border-r-4 border-black">
             {/* make sidebar in tailwind with profile */}
             <div className="flex flex-col items-center justify-between space-y-3">
               <div className="flex-shrink-0">
@@ -23,7 +25,7 @@ export default function Sidebar(props) {
                 <div className="mx-2 text-[#fc6441]">Premium</div>
               </div>
               {/* basic info + qr */}
-              <div className="flex flex-col space-y-1 justify-between text-gray-900 items-center">
+              <div className="flex flex-col space-y-3 justify-between text-gray-900 items-center">
                 <h2 className="text-3xl text-white font-extrabold">Mr. Oberoi</h2>
                 <p className="text-xl text-white">Customer ID : 696969</p>
                 <button 
@@ -32,12 +34,7 @@ export default function Sidebar(props) {
                   <MdRateReview className="text-[#fc6441]" fontSize={25}/>
                   <div>Review Your Vendors</div>
                 </button>
-                <button 
-                onClick={()=>{component('notification')}}
-                className="flex w-full rounded-lg p-2 my-4 bg-white hover:bg-[#fab3a2]">
-                  <IoIosNotifications className="text-[#fc6441]" fontSize={25}/>
-                  <div>Notification</div>
-                </button>
+
                 <button 
                 onClick={()=>{component('leaderboard')}}
                 className="flex w-full rounded-lg p-2 my-4 bg-white hover:bg-[#fab3a2]">

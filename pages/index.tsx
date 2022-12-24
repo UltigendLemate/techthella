@@ -89,7 +89,7 @@ export default function Home(Rev) {
 
 
         {/* Student Feedback Carousel Starts */}
-        <div className="flex flex-col gap-10 w-4/5 py-4 mx-auto relative">
+        <div className="flex flex-col gap-10 w-4/5 py-4 mx-auto -my-32 mb-0 relative">
           <div className="flex flex-col gap-2">
             <div className="xl:text-5xl text-4xl font-semibold">
               <h1>

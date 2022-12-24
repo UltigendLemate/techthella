@@ -2,6 +2,7 @@ import React, {useState, useEffect, Fragment, useLayoutEffect} from 'react'
 // import CustomerHome from "../components/CustomerNavbar";
 import Navbar from "../components/Navbar";
 import CustomerSidebar from "../components/CustomerSidebar";
+import Leaderboard from '../components/Leaderboard';
 import Head from "next/head";
 import CustomerNear from './../components/CustomerNear';
 import Image from "next/image";
@@ -256,7 +257,7 @@ function sendData() {
 
 const Customer = () => {
   
-  const [component, setcomponent] = useState('');
+  const [component, setcomponent] = useState('review');
   return (
     <>
       <Head>
@@ -265,7 +266,7 @@ const Customer = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="relative">
+      <div className="relative overflow-x-hidden">
         <Navbar/>
         
         <div className="flex flex-row">
@@ -278,104 +279,12 @@ const Customer = () => {
         {
   (component === 'review')  ? <Review/> : null
 }
-        <div className="w-4/5 mx-auto grid grid-cols-2 justify-center">
+        <div className=" mx-auto grid grid-cols-2 justify-center">
 
     {(component === 'vendors near me') ? <LocateCustomer/> : null } 
    
      {/* leaderboard codee  */}
-        {(component === 'leaderboard') ? (<div className="flex flex-col w-[70vw]">
-    <div className="flex justify-center items-center py-10 text-5xl font-bold">Leaderboard</div>
-  <div className="overflow-x-auto  lg:-mx-8">
-    <div className="py-2 inline-block w-full sm:px-6 lg:px-8">
-      <div className="overflow-hidden grid justify-center items-center text-center">
-        <table className="w-[60vw] px-10">
-          <thead className="border-b">
-            <tr>
-              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
-                Rank
-              </th>
-              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
-                Full Name
-              </th>
-              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
-                Rating
-              </th>
-            </tr>
-          </thead>
-          <tbody className="text-xl font-semibold">
-            <tr className="border-b ">
-              <td className="px-5 m-4 font-bold rounded-full py-4 whitespace-nowrap text-2xl text-purple-600 bg-yellow-500 inline-block ">1</td>
-              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Harish 
-              </td>
-
-              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @mdo
-              </td>
-            </tr>
-            <tr className="bg-white border-b">
-              <td className="px-5 m-4 font-bold rounded-full py-4 whitespace-nowrap text-2xl text-purple-600 bg-yellow-500 inline-block ">2</td>
-              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Om Bihari
-              </td>
-
-              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @fat
-              </td>
-            </tr>
-            <tr className="bg-white border-b">
-              <td className="px-5 m-4 font-bold rounded-full py-4 whitespace-nowrap text-2xl text-purple-600 bg-yellow-500 inline-block ">3</td>
-              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Kamlesh Rawat
-              </td>
-
-              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @twitter
-              </td>
-
-              <hr />
-            </tr>
-
-            
-          </tbody>
-        </table>
-      </div>
-      <div className="overflow-hidden border-t-4 border-black grid justify-center items-center text-center">
-        <table className="w-[60vw] px-10">
-          <thead className="border-b">
-            <tr>
-              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
-                Rank
-              </th>
-              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
-                Name
-              </th>
-              <th scope="col" className="text-2xl text-green-500 font-bold px-6 py-4">
-                Rating
-              </th>
-            </tr>
-          </thead>
-          <tbody className="text-xl font-semibold">
-            <tr className="border-b ">
-              <td className="px-5 m-4 font-bold rounded-full py-4 whitespace-nowrap text-2xl text-purple-600 bg-yellow-500 inline-block ">1</td>
-              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Harish 
-              </td>
-
-              <td className=" text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @mdo
-              </td>
-            </tr>
-
-
-
-            
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>) : null }
+        {(component === 'leaderboard') ? (<Leaderboard/>) : null }
 
 
 {/* leaderboard code endss here */}
