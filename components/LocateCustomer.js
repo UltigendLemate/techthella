@@ -1,6 +1,4 @@
-import React,{ Fragment, useState,useLayoutEffect ,useEffect} from 'react'
-
-import Image from "next/image";
+import React,{ Fragment, useState} from 'react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Listbox, Transition } from '@headlessui/react'
 
@@ -23,75 +21,36 @@ const Days = [
   { id: 6, day: "Sunday", unavailable: false },
 ]
 
-type Props = {
-
-
-};
 
 
 
 
-const LocateCustomer = (props: Props) => {
 
-
-
-  
-  const date = new Date();
-  const showTime = date.getHours() 
-      + ':' + date.getMinutes() 
-      + ":" + date.getSeconds();
-  const [time, setTime] = useState(showTime)
- 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTime(showTime)
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [showTime]);
-
-  
-
+const LocateCustomer = () => {
   const [selected, setSelected] = useState(pincode[0])
   const [todayDay, setTodayDay] = useState(Days[0])
+  const [probability, setprobability] = useState("0")
 
-  // toggle to button
-  const [toggle, setToggle] = useState(true)
-
-
-  const [dataSet, setDataSet] = useState({
-    pin: selected.pinCode,
-    day: todayDay.id,
-    time: parseInt(date.getHours() +""+ date.getMinutes()),
-  })
-  useEffect(() => {
-    let dateN = new Date();
- 
-      
-    
-    setDataSet({
-      pin: selected.pinCode,
-      day: todayDay.id ,
-      time: parseInt(dateN.getHours() +""+ dateN.getMinutes())
-    })
-    console.log(dataSet)
-    
-  }, [toggle]);
-
-function sendData() {
-  setToggle(!toggle);
-  console.log(dataSet);
-  fetch('http://127.0.0.1:5000/result', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(dataSet),
-  }).then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  }).catch((error) => {
-    console.error('Error:', error);
-  });
+async function sendData() {
+  let headersList = {
+    "Accept": "*/*",
+    "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+    "Content-Type": "application/json"
+   }
+   let dateN = new Date();
+   
+   let bodyContent = JSON.stringify({"rings" : [selected.pinCode, parseInt(dateN.getHours() +""+ dateN.getMinutes()),todayDay.id]});
+   
+   let response = await fetch("https://techthe.anupammaurya2.repl.co/result", { 
+     method: "POST",
+     body: bodyContent,
+     headers: headersList
+   });
+   
+   let data = await response.text();
+   console.log(data);
+   setprobability(data)
+   
 }
 
   return (
@@ -214,11 +173,10 @@ function sendData() {
       </div>
 
       <div className='border-b-4 border-gray-300 pb-10'>
-      <h2 className='text-xl font-semibold pb-3'>Current time : {time} </h2>
       <button className='text-xl font-bold bg-green-500 px-4 py-2 rounded-2xl' onClick={sendData}>Submit Data</button>
       </div>
       <div className=''>
-      <h2 className='text-2xl font-semibold font-public-sans'>The <span className='text-green-600 text-3xl'>probability</span> to get sales at this point of time at this location is 10%</h2>
+      <h2 className='text-2xl font-semibold font-public-sans'>The <span className='text-green-600 text-3xl'>probability</span> to get sales at this point of time at this location is {probability}%</h2>
 
       </div>
 
@@ -229,7 +187,7 @@ function sendData() {
 
     <div className="col-span-3">
 
-    <div ><iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=Ambica%20VIhar,%20New%20Delhi+(Ambika%20Vihar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe></div>
+    <div ><iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=Ambica%20VIhar,%20New%20Delhi+(Ambika%20Vihar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" style={{border:0}}></iframe></div>
 
     </div>
 

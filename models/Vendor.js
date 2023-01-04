@@ -7,7 +7,8 @@ const VendorSchema = new mongoose.Schema(
     phone: {type:Number, required: true, unique:true},
     password: { type: String, required: true },
     isuser: {type:Boolean, default:false},
-    credit: {type: Number, default:0}
+    credit: {type: Number, default:0},
+    cart: {type: Array,default:null}
   },{timestamps: true});
 
   mongoose.models = {};

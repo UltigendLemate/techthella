@@ -4,7 +4,7 @@ import UpdateCart from "../components/UpdateCart";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Leaderboard from "../components/Leaderboard";
-import LocateCustomer from "../components/LocateCustomer";
+import LocateCustomer from "../components/LocateCustomer.js";
 // import UpdateCart from "../components/UpdateCart";
 import { useState } from 'react';
 
