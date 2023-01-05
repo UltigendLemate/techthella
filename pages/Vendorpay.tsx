@@ -55,13 +55,12 @@ const Customerpay = () => {
               className="mx-auto"
               alt=""
             />
-        
-              <a 
-              className="text-center w-3/5 rounded-xl"
-              href="https://buy.stripe.com/test_9AQdTPcBW0OVbT2001">
-                Checkout 
+            <a
+            className="w-3/5 mx-auto text-center"
+            href="https://buy.stripe.com/test_4gw173fO87dje1afZ0"
+            >
+              Checkout
             </a>
-            
             
           </section>
           <style jsx>

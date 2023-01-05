@@ -9,7 +9,7 @@ export default async function handler(req, res) {
           {
             price_data: {
                 currency: 'inr',
-                product: 'prod_N6jmoe8VxV6vlf',
+                product: 'prod_N6jnVuL4YWqNld',
                 unit_amount: 199900
             },
             quantity: 1,
