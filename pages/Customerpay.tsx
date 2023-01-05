@@ -40,64 +40,27 @@ const Customerpay = () => {
         appearance,
       };
 
-      
-    // return (
-    //     <div className="App w-full max-h-screen text-center my-auto">
-     
-    //       <main className="my-12">
-    
-    //        {status && status === 'success' && (
-    //           <div className='bg-green-100 text-green-700 p-2 rounded border mb-2 border-green-700'>
-    //             Payment Successful
-    //           </div>
-    //         )}
-    //         {status && status === 'cancel' && (
-    //           <div className='bg-red-100 text-red-700 p-2 rounded border mb-2 border-red-700'>
-    //             Payment Unsuccessful
-    //           </div>
-    //         )} 
-    
-    //         <h1 className="text-4xl font-semibold">Explore our subscriptions</h1>
-    //         <div className="grid grid-cols-2 mt-10">
-    //           <div className="items-center mx-auto">
-                
-    //             <p className="text-lg">Standard Plan</p>
-    //             <Image src="/assets/standard.png"
-    //             alt="standard plan"
-    //             width={150}
-    //             height={150}
-    //             />
-    //             <button className="bg-slate-100 hover:bg-slate-400  text-xl rounded-lg px-3" 
-    //            >
-    //                 Purchase</button>
-    //           </div>
-    
-    //           <div>
-                
-    //             <p>Premium Plan</p>
-    //             <button className="bg-slate-100 hover:bg-slate-400  text-xl" 
-    //             >Purchase</button>
-    //           </div>
-    //           <div>
-                
-    //           </div>
-    //         </div>
-    //       </main> 
-    //       {clientSecret && (
-    //     <Elements options={options} stripe={stripePromise}>
-    //       <CheckoutForm />
-    //     </Elements>
-    //   )}
-    //     </div>
-    //   )
-
     return (
-        <>
-        <form action="/api/checkout_sessions" method="POST" >
-          <section>
-            <button type="submit" role="link">
+      
+        <form className="mt-12 ml-[400px] h-70vh" 
+        action="/api/checkout_sessions" method="POST" >
+          <section >
+            <h1 className="text-2xl text-center font-semibold">
+              Be a part of our Fam!
+            </h1>
+            <Image
+              src={"/assets/payment.png"}
+              width={100}
+              height={100}
+              className="mx-auto"
+              alt=""
+            />
+            <button 
+            className="w-3/5 mx-auto"
+            type="submit" role="link">
               Checkout
             </button>
+            
           </section>
           <style jsx>
             {`
@@ -127,11 +90,6 @@ const Customerpay = () => {
             `}
           </style>
         </form>
-
-
-
-
-        </>
       );
 }
 
